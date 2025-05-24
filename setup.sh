@@ -1,0 +1,13 @@
+code --install-extension davidanson.vscode-markdownlint
+code --install-extension eamodio.gitlens
+code --install-extension github.codespaces
+code --install-extension github.copilot
+code --install-extension github.copilot-chat
+code --install-extension github.github-vscode-theme
+code --install-extension github.vscode-pull-request-github
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-ceintl.vscode-language-pack-es
+code --install-extension ms-python.debugpy
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-vscode.vscode-typescript-next

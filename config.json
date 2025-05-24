@@ -1,0 +1,14 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+   
+    "files.associations": {
+        "*.py": "python",
+        "*.json": "json"
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "files.exclude": {
+        "**/__pycache__": true
+    },
+    "python.pythonPath": "python3"
+}
