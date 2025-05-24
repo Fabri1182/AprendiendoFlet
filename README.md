@@ -1,4 +1,5 @@
-# AprendiendoFlet
-Estoy aprendiendo Flet desde video "Curso Completo de Flet" en youtube del canal de "Código Espinoza" 
-Este curso dura 4h30, espero aprender a crear interfaces gráficas sencillas de aplicaciones de escritorio,
-web y para telefono con python
+# Aprendiendo Flet
+
+Estoy aprendiendo Flet desde el video "Curso Completo de Flet" en YouTube del canal "Código Espinoza".
+
+Este curso dura 4h 30min. Espero aprender a crear interfaces gráficas sencillas para aplicaciones de escritorio, web y teléfono con Python.
