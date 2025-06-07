@@ -43,9 +43,19 @@ def main(page: ft.Page):
             ]
         )
     
+    tareas = [] # Lista para almacenar las tareas
+
+    def eliminar_tareas_realizadas(e):
+        #nonlocal tareas
+        # Elimina las tareas que están marcadas (checkbox seleccionado)
+        tareas[:] = [t for t in tareas if not t.leading.value]
+        # Después de eliminar, ya no hay tareas realizadas
+        tareas_realizadas.value = ""
+        actualizar_lista()
+
     def seleccionar_tarea(e):
-        seleccionadas = [t.title.value for t in tareas if t.leading.value]
-        tareas_seleccionadas.value = "Tareas seleccionadas: " + ", ".join(seleccionadas)
+        realizadas = [t.title.value for t in tareas if t.leading.value]
+        tareas_realizadas.value = "Tareas realizadas: " + ", ".join(realizadas)
         page.update()
 
     def actualizar_lista():
@@ -63,14 +73,16 @@ def main(page: ft.Page):
         campo_tarea.value = ""       # Limpia el campo de texto
         actualizar_lista()           # Actualiza la lista en la interfaz
     
-    campo_tarea = ft.TextField(hint_text="Ingrese una nueva tarea")
+    campo_tarea = ft.TextField(hint_text="Ingrese una nueva tarea",
+                               on_submit=agregar_tarea)  # <-- Esto permite agregar con ENTER)
     boton_agregar = ft.FilledButton(text="Agregar Tarea", on_click=agregar_tarea)
     lista_tareas = ft.ListView(expand=True, spacing=5)
-    tareas = []
+        
+    tareas_realizadas = ft.Text(value="", size=20, weight=ft.FontWeight.BOLD)
+    boton_eliminar_tr = ft.FilledButton(text="Eliminar tareas realizadas",
+                                     on_click=eliminar_tareas_realizadas)
 
-    tareas_seleccionadas = ft.Text(value="", size=20, 
-                                   weight=ft.FontWeight.BOLD)
-    
-    page.add(titulo, campo_tarea, boton_agregar, lista_tareas, tareas_seleccionadas)
+    page.add(titulo, campo_tarea, boton_agregar, lista_tareas, tareas_realizadas,
+              boton_eliminar_tr)
 
-ft.app(target=main, view=ft.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER, port=8080)
